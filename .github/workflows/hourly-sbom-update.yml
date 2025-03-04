@@ -80,6 +80,7 @@ jobs:
           COMPONENT_ID: ${{ matrix.image.component_id }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
           SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
+          OVERRIDE_NAME: true
 
       - name: Store hash as artifact
         uses: actions/upload-artifact@v4
