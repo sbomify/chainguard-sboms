@@ -53,6 +53,13 @@ jobs:
           mkdir -p sboms
           mv sbom.spdx.json sboms/${{ matrix.image.name }}-sbom.spdx.json
 
+          # Validate SBOM JSON
+          if ! jq empty sboms/${{ matrix.image.name }}-sbom.spdx.json; then
+            echo "Error: Invalid JSON in SBOM file"
+            exit 1
+          fi
+          echo "SBOM validation successful: Valid JSON format"
+
           # Check if this SHA has already been processed
           if [ -f .last_processed/${{ matrix.image.name }}.sha ] && [ "$(cat .last_processed/${{ matrix.image.name }}.sha)" == "$IMAGE_SHA" ]; then
             echo "This SHA has already been processed. Skipping upload."
