@@ -23,7 +23,7 @@ jobs:
         run: mkdir -p .last_processed
 
       - name: Download previous hash artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           name: last-processed-hash-${{ matrix.image.name }}
@@ -75,7 +75,7 @@ jobs:
           SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
 
       - name: Store hash as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: last-processed-hash-${{ matrix.image.name }}
           path: .last_processed/
