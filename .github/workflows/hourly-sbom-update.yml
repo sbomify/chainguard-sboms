@@ -1,0 +1,82 @@
+name: Hourly SBOM Update
+
+on:
+  schedule:
+    # Run every hour
+    - cron: '0 * * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  update-sboms:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - name: mariadb
+            component_id: IxPLKN9uQwaB
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create last_processed directory
+        run: mkdir -p .last_processed
+
+      - name: Download previous hash artifact
+        uses: actions/download-artifact@v3
+        continue-on-error: true
+        with:
+          name: last-processed-hash-${{ matrix.image.name }}
+          path: .last_processed
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+          curl -LO https://github.com/sigstore/cosign/releases/download/v2.2.0/cosign-linux-amd64
+          chmod +x cosign-linux-amd64
+          sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+
+      - name: Update SBOM for ${{ matrix.image.name }}
+        id: update_sbom
+        run: |
+          # Run the script to generate the SBOM
+          ./chainguard.sh ${{ matrix.image.name }}
+
+          # Get the image SHA directly from docker inspect
+          IMAGE_SHA=$(docker inspect "cgr.dev/chainguard/${{ matrix.image.name }}:latest" | jq -r '.[].Id' | cut -d':' -f2)
+
+          # Store the SHA as an output variable
+          echo "image_sha=$IMAGE_SHA" >> $GITHUB_OUTPUT
+          echo "Using image SHA: $IMAGE_SHA"
+
+          mkdir -p sboms
+          mv sbom.spdx.json sboms/${{ matrix.image.name }}-sbom.spdx.json
+
+          # Check if this SHA has already been processed
+          if [ -f .last_processed/${{ matrix.image.name }}.sha ] && [ "$(cat .last_processed/${{ matrix.image.name }}.sha)" == "$IMAGE_SHA" ]; then
+            echo "This SHA has already been processed. Skipping upload."
+            echo "skip_upload=true" >> $GITHUB_OUTPUT
+          else
+            echo "New SHA detected. Will upload SBOM."
+            echo "skip_upload=false" >> $GITHUB_OUTPUT
+            # Update the SHA file
+            echo "$IMAGE_SHA" > .last_processed/${{ matrix.image.name }}.sha
+          fi
+
+      - name: Upload SBOM to sbomify
+        if: steps.update_sbom.outputs.skip_upload != 'true'
+        id: upload_sbom
+        uses: sbomify/github-action@master
+        env:
+          TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
+          COMPONENT_ID: ${{ matrix.image.component_id }}
+          SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
+          SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
+
+      - name: Store hash as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: last-processed-hash-${{ matrix.image.name }}
+          path: .last_processed/
+          retention-days: 90

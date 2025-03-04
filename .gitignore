@@ -1,0 +1,10 @@
+# Ignore SBOM artifacts
+sboms/
+
+# Don't ignore the .last_processed directory
+!.last_processed/
+!.last_processed/*.sha
+
+# Ignore other common files
+.DS_Store
+*.log
