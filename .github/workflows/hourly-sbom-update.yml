@@ -3,7 +3,7 @@ name: Hourly SBOM Update
 on:
   schedule:
     # Run every hour
-    - cron: '0 * * * *'
+  #  - cron: '0 * * * *'
   # Allow manual triggering
   workflow_dispatch:
 
@@ -17,7 +17,7 @@ jobs:
             component_id: IxPLKN9uQwaB
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create last_processed directory
         run: mkdir -p .last_processed
@@ -80,7 +80,6 @@ jobs:
           COMPONENT_ID: ${{ matrix.image.component_id }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
           SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
-          OVERRIDE_NAME: true
 
       - name: Store hash as artifact
         uses: actions/upload-artifact@v4
