@@ -1,3 +1,4 @@
+---
 name: Hourly SBOM Update
 
 on:
@@ -19,23 +20,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create last_processed directory
-        run: mkdir -p .last_processed
-
-      - name: Download previous hash artifact
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          name: last-processed-hash-${{ matrix.image.name }}
-          path: .last_processed
-
       - name: Install dependencies
+        env:
+          SBOM_CONVERT_VERSION=0.0.7
+          COSIGN_VERSION=2.2.0
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
-          curl -LO https://github.com/sigstore/cosign/releases/download/v2.2.0/cosign-linux-amd64
+
+          # Cosign
+          curl -LO \
+            "https://github.com/sigstore/cosign/releases/download/v${COSIGN_VERSION}/cosign-linux-amd64"
           chmod +x cosign-linux-amd64
           sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+
+          # sbom-convert
+          mkdir /tmp/sbom-convert
+          cd /tmp/sbom-convert
+          curl -LO \
+            "https://github.com/protobom/sbom-convert/releases/download/v${SBOM_CONVERT_VERSION}/sbom-convert_linux_amd64.tar.gz"
+          tar xvfz sbom-convert_linux_amd64.tar.gz
+          mv sbom-convert /usr/local/bin/
+          cd $HOME
+          rm -rf /tmp/sbom-convert
 
       - name: Update SBOM for ${{ matrix.image.name }}
         id: update_sbom
@@ -53,25 +60,22 @@ jobs:
           mkdir -p sboms
           mv sbom.spdx.json sboms/${{ matrix.image.name }}-sbom.spdx.json
 
+          # Generate CDX
+          sbom-convert convert \
+            sboms/${{ matrix.image.name }}-sbom.spdx.json \
+            -o sboms/${{ matrix.image.name }}-sbom.cdx.json
+
           # Validate SBOM JSON
           if ! jq empty sboms/${{ matrix.image.name }}-sbom.spdx.json; then
-            echo "Error: Invalid JSON in SBOM file"
+            echo "Error: Invalid SPDX JSON in SBOM file"
+            exit 1
+          elif ! jq empty sboms/${{ matrix.image.name }}-sbom.cdx.json; then
+            echo "Error: Invalid CDX JSON in SBOM file"
             exit 1
           fi
           echo "SBOM validation successful: Valid JSON format"
 
-          # Check if this SHA has already been processed
-          if [ -f .last_processed/${{ matrix.image.name }}.sha ] && [ "$(cat .last_processed/${{ matrix.image.name }}.sha)" == "$IMAGE_SHA" ]; then
-            echo "This SHA has already been processed. Skipping upload."
-            echo "skip_upload=true" >> $GITHUB_OUTPUT
-          else
-            echo "New SHA detected. Will upload SBOM."
-            echo "skip_upload=false" >> $GITHUB_OUTPUT
-            # Update the SHA file
-            echo "$IMAGE_SHA" > .last_processed/${{ matrix.image.name }}.sha
-          fi
-
-      - name: Upload SBOM to sbomify
+      - name: Upload SPDX SBOM to sbomify
         if: steps.update_sbom.outputs.skip_upload != 'true'
         id: upload_sbom
         uses: sbomify/github-action@master
@@ -81,9 +85,12 @@ jobs:
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
           SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
 
-      - name: Store hash as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: last-processed-hash-${{ matrix.image.name }}
-          path: .last_processed/
-          retention-days: 90
+      - name: Upload CDX SBOM to sbomify
+        if: steps.update_sbom.outputs.skip_upload != 'true'
+        id: upload_sbom
+        uses: sbomify/github-action@master
+        env:
+          TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
+          COMPONENT_ID: ${{ matrix.image.component_id }}
+          SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
+          SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}

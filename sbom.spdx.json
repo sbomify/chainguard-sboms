@@ -1,0 +1,1919 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2025-08-01T23:05:56Z",
+    "creators": [
+      "Tool: apko (v0.29.10+dirty)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+  ],
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "name": "sbom-sha256:d0eb2eb0a6a7637d34238eb5736fbb069ed1d65f443b007841ef02b7ba4126fa",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+        }
+      ],
+      "description": "apko container image",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30",
+      "primaryPackagePurpose": "CONTAINER",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "sha256:1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-d0eb2eb0a6a7637d34238eb5736fbb069ed1d65f443b007841ef02b7ba4126fa",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Ad0eb2eb0a6a7637d34238eb5736fbb069ed1d65f443b007841ef02b7ba4126fa?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:d0eb2eb0a6a7637d34238eb5736fbb069ed1d65f443b007841ef02b7ba4126fa",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-d792a8653c9830487c6d6adff852951cbffef281b9cce811a2b4a817121517ab",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Ad792a8653c9830487c6d6adff852951cbffef281b9cce811a2b4a817121517ab?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:d792a8653c9830487c6d6adff852951cbffef281b9cce811a2b4a817121517ab",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-6ac1d984d8e2a48060c9b6f2374782832c3dc63a008750877af0fe6346a54999",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A6ac1d984d8e2a48060c9b6f2374782832c3dc63a008750877af0fe6346a54999?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:6ac1d984d8e2a48060c9b6f2374782832c3dc63a008750877af0fe6346a54999",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-d628ee9eaded7ef4aee63288a70fc0902dc92f50a21253db639aacf78371fe4d",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Ad628ee9eaded7ef4aee63288a70fc0902dc92f50a21253db639aacf78371fe4d?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:d628ee9eaded7ef4aee63288a70fc0902dc92f50a21253db639aacf78371fe4d",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-cc66dd498c23b3543fc18bf6c1525c5de46c5391f7341f7677c629ab1877dcd7",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Acc66dd498c23b3543fc18bf6c1525c5de46c5391f7341f7677c629ab1877dcd7?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:cc66dd498c23b3543fc18bf6c1525c5de46c5391f7341f7677c629ab1877dcd7",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-72e30b579e2fc5d5eefb5283d09636cff3e7f2634e274a6646023e4239f1eccb",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A72e30b579e2fc5d5eefb5283d09636cff3e7f2634e274a6646023e4239f1eccb?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:72e30b579e2fc5d5eefb5283d09636cff3e7f2634e274a6646023e4239f1eccb",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-ca31161c85c3fb48dcb8fc154bd104cccfa977e7481c42e8d0101f7c39bac564",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Aca31161c85c3fb48dcb8fc154bd104cccfa977e7481c42e8d0101f7c39bac564?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:ca31161c85c3fb48dcb8fc154bd104cccfa977e7481c42e8d0101f7c39bac564",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-9c721390c2c656a4a501d4c550c9feda8cea52080b4724a0a970c9450ba4f650",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A9c721390c2c656a4a501d4c550c9feda8cea52080b4724a0a970c9450ba4f650?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:9c721390c2c656a4a501d4c550c9feda8cea52080b4724a0a970c9450ba4f650",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-8553cfcfba5bb26621d17ce940771aa99fe6f4b33353c4b312c387b11975e8d5",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A8553cfcfba5bb26621d17ce940771aa99fe6f4b33353c4b312c387b11975e8d5?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:8553cfcfba5bb26621d17ce940771aa99fe6f4b33353c4b312c387b11975e8d5",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-e5fbcdc8e744262e95b890fbc09df6b4d348dace6f977d8e091f13853f312987",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3Ae5fbcdc8e744262e95b890fbc09df6b4d348dace6f977d8e091f13853f312987?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:e5fbcdc8e744262e95b890fbc09df6b4d348dace6f977d8e091f13853f312987",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-67673336db979b66080c7a5d77966dbdbcb42c519cc287bbbfd09744a603b33e",
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/image@sha256%3A67673336db979b66080c7a5d77966dbdbcb42c519cc287bbbfd09744a603b33e?arch=amd64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "sha256:67673336db979b66080c7a5d77966dbdbcb42c519cc287bbbfd09744a603b33e",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-OperatingSystem-wolfi",
+      "description": "Operating System",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "name": "wolfi",
+      "primaryPackagePurpose": "OPERATING_SYSTEM",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wolfi-baselayout-20230201-r23",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/wolfi-baselayout@20230201-r23?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "name": "wolfi-baselayout",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20230201-r23"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wolfi-baselayout.yaml-a2020bf03d408b2ef1585d7dc52c29ce88524a76",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@a2020bf03d408b2ef1585d7dc52c29ce88524a76#wolfi-baselayout.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "wolfi-baselayout.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "a2020bf03d408b2ef1585d7dc52c29ce88524a76"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ca-certificates-bundle-20250619-r5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ca-certificates-bundle@20250619-r5?arch=x86_64&distro=wolfi",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "ca-certificates-bundle",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "20250619-r5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ca-certificates.yaml-2619f318eef93ed7f288a87b446626ed9eff6488",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@2619f318eef93ed7f288a87b446626ed9eff6488#ca-certificates.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "ca-certificates.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2619f318eef93ed7f288a87b446626ed9eff6488"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-gitlab.alpinelinux.org-alpine-ca-certificates-20250619-1ed28eb21ca591b93cd5bfdc4a9c71ca63593dc0-0",
+      "downloadLocation": "https://gitlab.alpinelinux.org/alpine/ca-certificates/-/archive/1ed28eb21ca591b93cd5bfdc4a9c71ca63593dc0/1ed28eb21ca591b93cd5bfdc4a9c71ca63593dc0.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/ca-certificates@20250619?vcs_url=git%2Bhttps%3A%2F%2Fgitlab.alpinelinux.org%2Falpine%2Fca-certificates%401ed28eb21ca591b93cd5bfdc4a9c71ca63593dc0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "ca-certificates",
+      "originator": "Organization: Alpine",
+      "supplier": "Organization: Alpine",
+      "versionInfo": "20250619"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-glibc-locale-posix-2.41-r56",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/glibc-locale-posix@2.41-r56?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "glibc-locale-posix",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2.41-r56"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-glibc.yaml-da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7#glibc.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "glibc.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-repo.or.cz-glibc.git-glibc-2.41-74f59e9271cbb4071671e5a474e7d4f1622b186f-0",
+      "downloadLocation": "https://tarballs.cgr.dev/g/1b11757d33424678ba2d9d6fbd9eb6293a7bfa196dca15a29af179af778c235d-74f59e9271cbb4071671e5a474e7d4f1622b186f.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/glibc@glibc-2.41?vcs_url=git%2Bhttps%3A%2F%2Frepo.or.cz%2Fglibc.git%4074f59e9271cbb4071671e5a474e7d4f1622b186f",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "glibc",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "glibc-2.41"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libgcc-15.1.0-r4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libgcc@15.1.0-r4?arch=x86_64&distro=wolfi",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
+      "name": "libgcc",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "15.1.0-r4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-gcc.yaml-0b5a017d2a87bcc2bb923b8da4509c86acfea010",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@0b5a017d2a87bcc2bb923b8da4509c86acfea010#gcc.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "gcc.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "0b5a017d2a87bcc2bb923b8da4509c86acfea010"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-gcc-15.1.0-0",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "ddd35ca6c653dffa88f7c7ef9ee4cd806e156e0f3b30f4d63e75a8363361285cd566ee73127734cde6a934611de815bee3e32e24bfd2e0ab9f7ff35c929821c1"
+        }
+      ],
+      "downloadLocation": "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/gcc@15.1.0?checksum=sha512%3Addd35ca6c653dffa88f7c7ef9ee4cd806e156e0f3b30f4d63e75a8363361285cd566ee73127734cde6a934611de815bee3e32e24bfd2e0ab9f7ff35c929821c1&download_url=https%3A%2F%2Fftpmirror.gnu.org%2Fgnu%2Fgcc%2Fgcc-15.1.0%2Fgcc-15.1.0.tar.xz",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "gcc",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "15.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-glibc-2.41-r56",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/glibc@2.41-r56?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "glibc",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2.41-r56"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ld-linux-2.41-r56",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ld-linux@2.41-r56?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "ld-linux",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2.41-r56"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses-terminfo-base-6.5C95p20250621-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ncurses-terminfo-base@6.5_p20250621-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "name": "ncurses-terminfo-base",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "6.5_p20250621-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses.yaml-dedd0db9fa052224b3d83efd470f6c700a30b98d",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@dedd0db9fa052224b3d83efd470f6c700a30b98d#ncurses.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "ncurses.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "dedd0db9fa052224b3d83efd470f6c700a30b98d"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses-6.5C95p20250621-0",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "1b665749b822133e7166c21e44e0cf0d94766a7ed4f96a6138de43c46c8ce85ed0c5d5230c050103de3830e7d2fc35c283262d30990b9de30851d1f999525b85"
+        }
+      ],
+      "downloadLocation": "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250621.tgz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/ncurses@6.5_p20250621?checksum=sha512%3A1b665749b822133e7166c21e44e0cf0d94766a7ed4f96a6138de43c46c8ce85ed0c5d5230c050103de3830e7d2fc35c283262d30990b9de30851d1f999525b85&download_url=https%3A%2F%2Finvisible-mirror.net%2Farchives%2Fncurses%2Fcurrent%2Fncurses-6.5-20250621.tgz",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "ncurses",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "6.5_p20250621"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses-6.5C95p20250621-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ncurses@6.5_p20250621-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "name": "ncurses",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "6.5_p20250621-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-bash-5.3-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/bash@5.3-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "bash",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "5.3-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-bash.yaml-b96768fe1c8d6dbd5bcf00b324fa94288a2b8eff",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@b96768fe1c8d6dbd5bcf00b324fa94288a2b8eff#bash.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "bash.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "b96768fe1c8d6dbd5bcf00b324fa94288a2b8eff"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-bash-5.3-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "62dd49c44c399ed1b3f7f731e87a782334d834f08e098a35f2c87547d5dbb269"
+        }
+      ],
+      "downloadLocation": "https://ftp.fu-berlin.de/unix/gnu/bash/bash-5.3.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/bash@5.3?checksum=sha256%3A62dd49c44c399ed1b3f7f731e87a782334d834f08e098a35f2c87547d5dbb269&download_url=https%3A%2F%2Fftp.fu-berlin.de%2Funix%2Fgnu%2Fbash%2Fbash-5.3.tar.gz",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "bash",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "5.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libxcrypt-4.4.38-r3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libxcrypt@4.4.38-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+      "name": "libxcrypt",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "4.4.38-r3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libxcrypt.yaml-a33deee86b82e0e86a25b4d07a5054c020ab31f0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@a33deee86b82e0e86a25b4d07a5054c020ab31f0#libxcrypt.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "libxcrypt.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "a33deee86b82e0e86a25b4d07a5054c020ab31f0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-besser82-libxcrypt-v4.4.38-55ea777e8d567e5e86ffac917c28815ac54cc341-0",
+      "downloadLocation": "https://github.com/besser82/libxcrypt/archive/55ea777e8d567e5e86ffac917c28815ac54cc341.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/besser82/libxcrypt@v4.4.38",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+      "name": "libxcrypt",
+      "originator": "Organization: Besser82",
+      "supplier": "Organization: Besser82",
+      "versionInfo": "v4.4.38"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libcrypt1-2.41-r56",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libcrypt1@2.41-r56?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "libcrypt1",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2.41-r56"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-busybox-1.37.0-r47",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/busybox@1.37.0-r47?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-only",
+      "name": "busybox",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1.37.0-r47"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-busybox.yaml-a95f85c4e2b21c7c69f4bb2039e536b09737a93b",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@a95f85c4e2b21c7c69f4bb2039e536b09737a93b#busybox.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "busybox.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "a95f85c4e2b21c7c69f4bb2039e536b09737a93b"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-git.busybox.net-busybox-1C9537C950-be7d1b7b1701d225379bc1665487ed0871b592a5-0",
+      "downloadLocation": "https://tarballs.cgr.dev/b/9d75f0d7c398df565d7ac04c6819b62d6d8f9560f5eb4672596ecd8f7e96ae91-be7d1b7b1701d225379bc1665487ed0871b592a5.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/busybox@1_37_0?vcs_url=git%2Bhttps%3A%2F%2Fgit.busybox.net%2Fbusybox%40be7d1b7b1701d225379bc1665487ed0871b592a5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-only",
+      "name": "busybox",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1_37_0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libaio-0.3.113-r5",
+      "copyrightText": "\n",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libaio@0.3.113-r5?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "libaio",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "0.3.113-r5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libaio.yaml-96e7b66ae18ae851241a27d55ee545273788d62b",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/https%3A/%2Funknown%2Funknown%2Funknown@96e7b66ae18ae851241a27d55ee545273788d62b#libaio.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "libaio.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "96e7b66ae18ae851241a27d55ee545273788d62b"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pagure.io-libaio.git-libaio-0.3.113-1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448-0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/libaio@libaio-0.3.113?vcs_url=git%2Bhttps%3A%2F%2Fpagure.io%2Flibaio.git%401b18bfafc6a2f7b9fa2c6be77a95afed8b7be448",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "name": "libaio",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "libaio-0.3.113"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libbz2-1-1.0.8-r21",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libbz2-1@1.0.8-r21?arch=x86_64&distro=wolfi",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "libbz2-1",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1.0.8-r21"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-bzip2.yaml-2619f318eef93ed7f288a87b446626ed9eff6488",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@2619f318eef93ed7f288a87b446626ed9eff6488#bzip2.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "bzip2.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2619f318eef93ed7f288a87b446626ed9eff6488"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sourceware.org-git-bzip2.git-bzip2-1.0.8-6a8690fc8d26c815e798c588f796eabe9d684cf0-0",
+      "downloadLocation": "https://tarballs.cgr.dev/g/bd9e4cde2b52db644da8ff7b19a2e89df1ff408230201c86e08456c98ef2fc12-6a8690fc8d26c815e798c588f796eabe9d684cf0.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/git%2Fbzip2@bzip2-1.0.8?vcs_url=git%2Bhttps%3A%2F%2Fsourceware.org%2Fgit%2Fbzip2.git%406a8690fc8d26c815e798c588f796eabe9d684cf0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "git/bzip2",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "bzip2-1.0.8"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libcrypto3-3.5.1-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libcrypto3@3.5.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "name": "libcrypto3",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "3.5.1-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-openssl.yaml-23b0714441174d1ca39b76ef461bb9450975654e",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@23b0714441174d1ca39b76ef461bb9450975654e#openssl.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "openssl.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "23b0714441174d1ca39b76ef461bb9450975654e"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-openssl-openssl-openssl-3.5.1-aea7aaf2abb04789f5868cbabec406ea43aa84bf-0",
+      "downloadLocation": "https://github.com/openssl/openssl/archive/aea7aaf2abb04789f5868cbabec406ea43aa84bf.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/openssl/openssl@openssl-3.5.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "name": "openssl",
+      "originator": "Organization: Openssl",
+      "supplier": "Organization: Openssl",
+      "versionInfo": "openssl-3.5.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libpcre2-8-0-10.45-r3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libpcre2-8-0@10.45-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "libpcre2-8-0",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "10.45-r3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pcre2.yaml-f979ab70f190d7adfca3b54e86162e8e02d08455",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@f979ab70f190d7adfca3b54e86162e8e02d08455#pcre2.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pcre2.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "f979ab70f190d7adfca3b54e86162e8e02d08455"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-PCRE2Project-pcre2.git-pcre2-10.45-2dce7761b1831fd3f82a9c2bd5476259d945da4d-0",
+      "downloadLocation": "https://github.com/PCRE2Project/pcre2/archive/2dce7761b1831fd3f82a9c2bd5476259d945da4d.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/pcre2project/pcre2@pcre2-10.45",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "pcre2",
+      "originator": "Organization: Pcre2project",
+      "supplier": "Organization: Pcre2project",
+      "versionInfo": "pcre2-10.45"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libpcre2-posix-3-10.45-r3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libpcre2-posix-3@10.45-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "libpcre2-posix-3",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "10.45-r3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libsepol-3.9-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libsepol@3.9-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1",
+      "name": "libsepol",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "3.9-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libsepol.yaml-48b17e87182394f2aa2ea9af0f5ef231cf12d70a",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@48b17e87182394f2aa2ea9af0f5ef231cf12d70a#libsepol.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "libsepol.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "48b17e87182394f2aa2ea9af0f5ef231cf12d70a"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-SELinuxProject-selinux.git-libsepol-3.9-919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09-0",
+      "downloadLocation": "https://github.com/SELinuxProject/selinux/archive/919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/selinuxproject/selinux@libsepol-3.9",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1",
+      "name": "selinux",
+      "originator": "Organization: Selinuxproject",
+      "supplier": "Organization: Selinuxproject",
+      "versionInfo": "libsepol-3.9"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libselinux-3.9-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libselinux@3.9-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "libselinux-1.0",
+      "name": "libselinux",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "3.9-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libselinux.yaml-0743a27bb68fb6d4f05a4e986bd27e06026e03b6",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@0743a27bb68fb6d4f05a4e986bd27e06026e03b6#libselinux.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "libselinux.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "0743a27bb68fb6d4f05a4e986bd27e06026e03b6"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-SELinuxProject-selinux.git-libselinux-3.9-919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09-0",
+      "downloadLocation": "https://github.com/SELinuxProject/selinux/archive/919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/selinuxproject/selinux@libselinux-3.9",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "libselinux-1.0",
+      "name": "selinux",
+      "originator": "Organization: Selinuxproject",
+      "supplier": "Organization: Selinuxproject",
+      "versionInfo": "libselinux-3.9"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libssl3-3.5.1-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libssl3@3.5.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "name": "libssl3",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "3.5.1-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libstdcC43C43-15.1.0-r4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libstdc%2B%2B@15.1.0-r4?arch=x86_64&distro=wolfi",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
+      "name": "libstdc++",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "15.1.0-r4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-linux-pam-1.7.1-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/linux-pam@1.7.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "linux-pam",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1.7.1-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-linux-pam.yaml-8647969823c78106d4eb67fe8666b4e7d5f6e27f",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@8647969823c78106d4eb67fe8666b4e7d5f6e27f#linux-pam.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "linux-pam.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "8647969823c78106d4eb67fe8666b4e7d5f6e27f"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-linux-pam-1.7.1-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "21dbcec6e01dd578f14789eac9024a18941e6f2702a05cf91b28c232eeb26ab0"
+        }
+      ],
+      "downloadLocation": "https://github.com/linux-pam/linux-pam/releases/download/v1.7.1/Linux-PAM-1.7.1.tar.xz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/linux-pam@1.7.1?checksum=sha256%3A21dbcec6e01dd578f14789eac9024a18941e6f2702a05cf91b28c232eeb26ab0&download_url=https%3A%2F%2Fgithub.com%2Flinux-pam%2Flinux-pam%2Freleases%2Fdownload%2Fv1.7.1%2FLinux-PAM-1.7.1.tar.xz",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "linux-pam",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1.7.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-zlib-1.3.1-r51",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/zlib@1.3.1-r51?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "zlib",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "1.3.1-r51"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-zlib.yaml-aa6b1a2aa6f8a444fc26b4415a66584030fa79d3",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@aa6b1a2aa6f8a444fc26b4415a66584030fa79d3#zlib.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "zlib.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "aa6b1a2aa6f8a444fc26b4415a66584030fa79d3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-madler-zlib.git-v1.3.1-51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf-0",
+      "downloadLocation": "https://github.com/madler/zlib/archive/51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/madler/zlib@v1.3.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "name": "zlib",
+      "originator": "Organization: Madler",
+      "supplier": "Organization: Madler",
+      "versionInfo": "v1.3.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mariadb-11.8-client-11.8.2-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/mariadb-11.8-client@11.8.2-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "mariadb-11.8-client",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "11.8.2-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mariadb-11.8.yaml-6e36e0b5db59e635c4cf7528b0ce11cf00233e4c",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@6e36e0b5db59e635c4cf7528b0ce11cf00233e4c#mariadb-11.8.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "mariadb-11.8.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "6e36e0b5db59e635c4cf7528b0ce11cf00233e4c"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-MariaDB-server.git-mariadb-11.8.2-8d36cafe4fc700e6e577d5a36650c58707e76b92-0",
+      "downloadLocation": "https://github.com/MariaDB/server/archive/8d36cafe4fc700e6e577d5a36650c58707e76b92.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/mariadb/server@mariadb-11.8.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "server",
+      "originator": "Organization: Mariadb",
+      "supplier": "Organization: Mariadb",
+      "versionInfo": "mariadb-11.8.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mariadb-11.8-oci-entrypoint-11.8.2-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/mariadb-11.8-oci-entrypoint@11.8.2-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "mariadb-11.8-oci-entrypoint",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "11.8.2-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-perl-5.42.0-r1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/perl@5.42.0-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+      "name": "perl",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "5.42.0-r1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-perl.yaml-b7a292787a972f61d4e63d274aea638eaad2b182",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@b7a292787a972f61d4e63d274aea638eaad2b182#perl.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "perl.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "b7a292787a972f61d4e63d274aea638eaad2b182"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-Perl-perl5.git-v5.42.0-5551b97c3be30b899397b99d57993a39d13294f1-0",
+      "downloadLocation": "https://github.com/Perl/perl5/archive/5551b97c3be30b899397b99d57993a39d13294f1.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/perl/perl5@v5.42.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+      "name": "perl5",
+      "originator": "Organization: Perl",
+      "supplier": "Organization: Perl",
+      "versionInfo": "v5.42.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pwgen-2.08-r6",
+      "copyrightText": "\n",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/pwgen@2.08-r6?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-or-later",
+      "name": "pwgen",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2.08-r6"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pwgen.yaml-65c344089941d09d49a534c4736712147a0a8643",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@65c344089941d09d49a534c4736712147a0a8643#pwgen.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "name": "pwgen.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "65c344089941d09d49a534c4736712147a0a8643"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-tytso-pwgen-v2.08-c25787fce93b2c99efd87219585c0531e80b6d1c-0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/tytso/pwgen@v2.08",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-or-later",
+      "name": "pwgen",
+      "originator": "Organization: Tytso",
+      "supplier": "Organization: Tytso",
+      "versionInfo": "v2.08"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-xz-5.8.1-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/xz@5.8.1-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "xz",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "5.8.1-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-xz.yaml-c6797001cb077747a99f8262b623ec255dfdb6f9",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@c6797001cb077747a99f8262b623ec255dfdb6f9#xz.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "xz.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "c6797001cb077747a99f8262b623ec255dfdb6f9"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-xz-5.8.1-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543"
+        }
+      ],
+      "downloadLocation": "https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/xz@5.8.1?checksum=sha256%3A507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543&download_url=https%3A%2F%2Fgithub.com%2Ftukaani-project%2Fxz%2Freleases%2Fdownload%2Fv5.8.1%2Fxz-5.8.1.tar.gz",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "xz",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "5.8.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mariadb-11.8-11.8.2-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/mariadb-11.8@11.8.2-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "name": "mariadb-11.8",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "11.8.2-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tzdata-2025b-r2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/tzdata@2025b-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "CC-PDDC",
+      "name": "tzdata",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "2025b-r2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tzdata.yaml-4bacf47430eaca7b3992e38f290ad32872d0b1b8",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@4bacf47430eaca7b3992e38f290ad32872d0b1b8#tzdata.yaml",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "tzdata.yaml",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "versionInfo": "4bacf47430eaca7b3992e38f290ad32872d0b1b8"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-github.com-eggert-tz-2025b-7e1145bfdb9630c127841dc8ce808a937a300938-0",
+      "downloadLocation": "https://github.com/eggert/tz/archive/7e1145bfdb9630c127841dc8ce808a937a300938.tar.gz",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/eggert/tz@2025b",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "CC-PDDC",
+      "name": "tz",
+      "originator": "Organization: Eggert",
+      "supplier": "Organization: Eggert",
+      "versionInfo": "2025b"
+    }
+  ],
+  "relationships": [
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-d0eb2eb0a6a7637d34238eb5736fbb069ed1d65f443b007841ef02b7ba4126fa",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-d792a8653c9830487c6d6adff852951cbffef281b9cce811a2b4a817121517ab",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-6ac1d984d8e2a48060c9b6f2374782832c3dc63a008750877af0fe6346a54999",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-d628ee9eaded7ef4aee63288a70fc0902dc92f50a21253db639aacf78371fe4d",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-cc66dd498c23b3543fc18bf6c1525c5de46c5391f7341f7677c629ab1877dcd7",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-72e30b579e2fc5d5eefb5283d09636cff3e7f2634e274a6646023e4239f1eccb",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-ca31161c85c3fb48dcb8fc154bd104cccfa977e7481c42e8d0101f7c39bac564",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-9c721390c2c656a4a501d4c550c9feda8cea52080b4724a0a970c9450ba4f650",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-8553cfcfba5bb26621d17ce940771aa99fe6f4b33353c4b312c387b11975e8d5",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-e5fbcdc8e744262e95b890fbc09df6b4d348dace6f977d8e091f13853f312987",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sha256-67673336db979b66080c7a5d77966dbdbcb42c519cc287bbbfd09744a603b33e",
+      "relationshipType": "CONTAINS",
+      "spdxElementId": "SPDXRef-Package-sha256-1b28139df5e13d3d32d85b3a45ccdfd66760eeb46568d3f371798dd73a090d30"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-wolfi-baselayout.yaml-a2020bf03d408b2ef1585d7dc52c29ce88524a76",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-wolfi-baselayout-20230201-r23"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ca-certificates.yaml-2619f318eef93ed7f288a87b446626ed9eff6488",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-ca-certificates-bundle-20250619-r5"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-gitlab.alpinelinux.org-alpine-ca-certificates-20250619-1ed28eb21ca591b93cd5bfdc4a9c71ca63593dc0-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-ca-certificates-bundle-20250619-r5"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-glibc.yaml-da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-glibc-locale-posix-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-repo.or.cz-glibc.git-glibc-2.41-74f59e9271cbb4071671e5a474e7d4f1622b186f-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-glibc-locale-posix-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-gcc.yaml-0b5a017d2a87bcc2bb923b8da4509c86acfea010",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libgcc-15.1.0-r4"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-gcc-15.1.0-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libgcc-15.1.0-r4"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-glibc.yaml-da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-glibc-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-repo.or.cz-glibc.git-glibc-2.41-74f59e9271cbb4071671e5a474e7d4f1622b186f-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-glibc-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-glibc.yaml-da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-ld-linux-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-repo.or.cz-glibc.git-glibc-2.41-74f59e9271cbb4071671e5a474e7d4f1622b186f-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-ld-linux-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ncurses.yaml-dedd0db9fa052224b3d83efd470f6c700a30b98d",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-ncurses-terminfo-base-6.5C95p20250621-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ncurses-6.5C95p20250621-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-ncurses-terminfo-base-6.5C95p20250621-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ncurses.yaml-dedd0db9fa052224b3d83efd470f6c700a30b98d",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-ncurses-6.5C95p20250621-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ncurses-6.5C95p20250621-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-ncurses-6.5C95p20250621-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-bash.yaml-b96768fe1c8d6dbd5bcf00b324fa94288a2b8eff",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-bash-5.3-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-bash-5.3-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-bash-5.3-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-libxcrypt.yaml-a33deee86b82e0e86a25b4d07a5054c020ab31f0",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libxcrypt-4.4.38-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-besser82-libxcrypt-v4.4.38-55ea777e8d567e5e86ffac917c28815ac54cc341-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libxcrypt-4.4.38-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-glibc.yaml-da4de94b0b55ef44a31e2594c11ff72fb6fbe9a7",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libcrypt1-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-repo.or.cz-glibc.git-glibc-2.41-74f59e9271cbb4071671e5a474e7d4f1622b186f-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libcrypt1-2.41-r56"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-busybox.yaml-a95f85c4e2b21c7c69f4bb2039e536b09737a93b",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-busybox-1.37.0-r47"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-git.busybox.net-busybox-1C9537C950-be7d1b7b1701d225379bc1665487ed0871b592a5-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-busybox-1.37.0-r47"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-libaio.yaml-96e7b66ae18ae851241a27d55ee545273788d62b",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libaio-0.3.113-r5"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pagure.io-libaio.git-libaio-0.3.113-1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libaio-0.3.113-r5"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-bzip2.yaml-2619f318eef93ed7f288a87b446626ed9eff6488",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libbz2-1-1.0.8-r21"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sourceware.org-git-bzip2.git-bzip2-1.0.8-6a8690fc8d26c815e798c588f796eabe9d684cf0-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libbz2-1-1.0.8-r21"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-openssl.yaml-23b0714441174d1ca39b76ef461bb9450975654e",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libcrypto3-3.5.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-openssl-openssl-openssl-3.5.1-aea7aaf2abb04789f5868cbabec406ea43aa84bf-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libcrypto3-3.5.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pcre2.yaml-f979ab70f190d7adfca3b54e86162e8e02d08455",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libpcre2-8-0-10.45-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-PCRE2Project-pcre2.git-pcre2-10.45-2dce7761b1831fd3f82a9c2bd5476259d945da4d-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libpcre2-8-0-10.45-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pcre2.yaml-f979ab70f190d7adfca3b54e86162e8e02d08455",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libpcre2-posix-3-10.45-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-PCRE2Project-pcre2.git-pcre2-10.45-2dce7761b1831fd3f82a9c2bd5476259d945da4d-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libpcre2-posix-3-10.45-r3"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-libsepol.yaml-48b17e87182394f2aa2ea9af0f5ef231cf12d70a",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libsepol-3.9-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-SELinuxProject-selinux.git-libsepol-3.9-919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libsepol-3.9-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-libselinux.yaml-0743a27bb68fb6d4f05a4e986bd27e06026e03b6",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libselinux-3.9-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-SELinuxProject-selinux.git-libselinux-3.9-919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libselinux-3.9-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-openssl.yaml-23b0714441174d1ca39b76ef461bb9450975654e",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libssl3-3.5.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-openssl-openssl-openssl-3.5.1-aea7aaf2abb04789f5868cbabec406ea43aa84bf-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libssl3-3.5.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-gcc.yaml-0b5a017d2a87bcc2bb923b8da4509c86acfea010",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-libstdcC43C43-15.1.0-r4"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-gcc-15.1.0-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-libstdcC43C43-15.1.0-r4"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-linux-pam.yaml-8647969823c78106d4eb67fe8666b4e7d5f6e27f",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-linux-pam-1.7.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-linux-pam-1.7.1-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-linux-pam-1.7.1-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-zlib.yaml-aa6b1a2aa6f8a444fc26b4415a66584030fa79d3",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-zlib-1.3.1-r51"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-madler-zlib.git-v1.3.1-51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-zlib-1.3.1-r51"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-mariadb-11.8.yaml-6e36e0b5db59e635c4cf7528b0ce11cf00233e4c",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-client-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-MariaDB-server.git-mariadb-11.8.2-8d36cafe4fc700e6e577d5a36650c58707e76b92-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-client-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-mariadb-11.8.yaml-6e36e0b5db59e635c4cf7528b0ce11cf00233e4c",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-oci-entrypoint-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-MariaDB-server.git-mariadb-11.8.2-8d36cafe4fc700e6e577d5a36650c58707e76b92-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-oci-entrypoint-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-perl.yaml-b7a292787a972f61d4e63d274aea638eaad2b182",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-perl-5.42.0-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-Perl-perl5.git-v5.42.0-5551b97c3be30b899397b99d57993a39d13294f1-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-perl-5.42.0-r1"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pwgen.yaml-65c344089941d09d49a534c4736712147a0a8643",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-pwgen-2.08-r6"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-tytso-pwgen-v2.08-c25787fce93b2c99efd87219585c0531e80b6d1c-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-pwgen-2.08-r6"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-xz.yaml-c6797001cb077747a99f8262b623ec255dfdb6f9",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-xz-5.8.1-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-xz-5.8.1-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-xz-5.8.1-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-mariadb-11.8.yaml-6e36e0b5db59e635c4cf7528b0ce11cf00233e4c",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-MariaDB-server.git-mariadb-11.8.2-8d36cafe4fc700e6e577d5a36650c58707e76b92-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-mariadb-11.8-11.8.2-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-tzdata.yaml-4bacf47430eaca7b3992e38f290ad32872d0b1b8",
+      "relationshipType": "DESCRIBED_BY",
+      "spdxElementId": "SPDXRef-Package-tzdata-2025b-r2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-github.com-eggert-tz-2025b-7e1145bfdb9630c127841dc8ce808a937a300938-0",
+      "relationshipType": "GENERATED_FROM",
+      "spdxElementId": "SPDXRef-Package-tzdata-2025b-r2"
+    }
+  ],
+  "spdxVersion": "SPDX-2.3"
+}
