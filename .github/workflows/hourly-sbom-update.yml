@@ -4,7 +4,7 @@ name: Hourly SBOM Update
 on:
   schedule:
     # Run every hour
-  #  - cron: '0 * * * *'
+    - cron: '0 * * * *'
   # Allow manual triggering
   workflow_dispatch:
 
@@ -44,11 +44,13 @@ jobs:
           cd $HOME
           rm -rf /tmp/sbom-convert
 
-      - name: Update SBOM for ${{ matrix.image.name }}
-        id: update_sbom
+      - name: Get image SHA and check existing SBOM
+        id: check_sbom
+        env:
+          SBOMIFY_TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
         run: |
-          # Run the script to generate the SBOM
-          ./chainguard.sh ${{ matrix.image.name }}
+          # Pull the image first to get the SHA
+          docker pull "cgr.dev/chainguard/${{ matrix.image.name }}:latest"
 
           # Get the image SHA directly from docker inspect
           IMAGE_SHA=$(docker inspect "cgr.dev/chainguard/${{ matrix.image.name }}:latest" | jq -r '.[].Id' | cut -d':' -f2)
@@ -56,6 +58,31 @@ jobs:
           # Store the SHA as an output variable
           echo "image_sha=$IMAGE_SHA" >> $GITHUB_OUTPUT
           echo "Using image SHA: $IMAGE_SHA"
+
+          # Check if SBOM with this version already exists
+          echo "Checking if SBOM with version $IMAGE_SHA already exists..."
+
+          # Make API call and check for existing version in one clean operation
+          EXISTING_COUNT=$(curl -s -H "Authorization: Bearer $SBOMIFY_TOKEN" \
+            "https://app.sbomify.com/api/v1/components/${{ matrix.image.component_id }}/sboms" \
+            | jq -r --arg version "$IMAGE_SHA" '[.items[]? | select(.sbom.version == $version)] | length' 2>/dev/null || echo "0")
+
+          if [ "$EXISTING_COUNT" -gt 0 ]; then
+            echo "✓ SBOM with version $IMAGE_SHA already exists ($EXISTING_COUNT found)"
+            echo "Skipping SBOM generation and upload..."
+            echo "skip_upload=true" >> $GITHUB_OUTPUT
+          else
+            echo "✗ No existing SBOM found with version $IMAGE_SHA"
+            echo "Proceeding with SBOM generation..."
+            echo "skip_upload=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate SBOM for ${{ matrix.image.name }}
+        if: steps.check_sbom.outputs.skip_upload != 'true'
+        id: update_sbom
+        run: |
+          # Run the script to generate the SBOM (image is already pulled)
+          ./chainguard.sh ${{ matrix.image.name }}
 
           mkdir -p sboms
           mv sbom.spdx.json sboms/${{ matrix.image.name }}-sbom.spdx.json
@@ -76,21 +103,21 @@ jobs:
           echo "SBOM validation successful: Valid JSON format"
 
       - name: Upload SPDX SBOM to sbomify
-        if: steps.update_sbom.outputs.skip_upload != 'true'
-        id: upload_sbom
+        if: steps.check_sbom.outputs.skip_upload != 'true'
+        id: upload_spdx_sbom
         uses: sbomify/github-action@master
         env:
           TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
           COMPONENT_ID: ${{ matrix.image.component_id }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
-          SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
+          SBOM_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
 
       - name: Upload CDX SBOM to sbomify
-        if: steps.update_sbom.outputs.skip_upload != 'true'
-        id: upload_sbom
+        if: steps.check_sbom.outputs.skip_upload != 'true'
+        id: upload_cdx_sbom
         uses: sbomify/github-action@master
         env:
           TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
           COMPONENT_ID: ${{ matrix.image.component_id }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
-          SBOM_VERSION: ${{ steps.update_sbom.outputs.image_sha }}
+          SBOM_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
