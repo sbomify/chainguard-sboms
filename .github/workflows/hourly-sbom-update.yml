@@ -16,6 +16,10 @@ jobs:
         image:
           - name: mariadb
             component_id: KamSpNwFyelM
+          - name: nginx
+            component_id: akbcFzHlLtnw
+          - name: python
+            component_id: BOHKgdYpNiQ7
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
