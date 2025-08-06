@@ -15,7 +15,7 @@ jobs:
       matrix:
         image:
           - name: mariadb
-            component_id: IxPLKN9uQwaB
+            component_id: KamSpNwFyelM
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
