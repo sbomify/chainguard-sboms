@@ -22,8 +22,8 @@ jobs:
 
       - name: Install dependencies
         env:
-          SBOM_CONVERT_VERSION=0.0.7
-          COSIGN_VERSION=2.2.0
+          SBOM_CONVERT_VERSION: 0.0.7
+          COSIGN_VERSION: 2.2.0
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
