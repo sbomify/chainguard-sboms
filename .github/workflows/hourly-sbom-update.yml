@@ -56,8 +56,8 @@ jobs:
           # Pull the image first to get the SHA
           docker pull "cgr.dev/chainguard/${{ matrix.image.name }}:latest"
 
-          # Get the image SHA directly from docker inspect
-          IMAGE_SHA=$(docker inspect "cgr.dev/chainguard/${{ matrix.image.name }}:latest" | jq -r '.[].Id' | cut -d':' -f2)
+          # Get the image SHA directly from docker inspect (keep sha256: prefix to match API format)
+          IMAGE_SHA=$(docker inspect "cgr.dev/chainguard/${{ matrix.image.name }}:latest" | jq -r '.[].Id')
 
           # Store the SHA as an output variable
           echo "image_sha=$IMAGE_SHA" >> $GITHUB_OUTPUT
@@ -66,10 +66,12 @@ jobs:
           # Check if SBOM with this version already exists
           echo "Checking if SBOM with version $IMAGE_SHA already exists..."
 
-          # Make API call and check for existing version in one clean operation
-          EXISTING_COUNT=$(curl -s -H "Authorization: Bearer $SBOMIFY_TOKEN" \
-            "https://app.sbomify.com/api/v1/components/${{ matrix.image.component_id }}/sboms" \
-            | jq -r --arg version "$IMAGE_SHA" '[.items[]? | select(.sbom.version == $version)] | length' 2>/dev/null || echo "0")
+          # Make API call to check for existing SBOMs
+          API_RESPONSE=$(curl -s -H "Authorization: Bearer $SBOMIFY_TOKEN" \
+            "https://app.sbomify.com/api/v1/components/${{ matrix.image.component_id }}/sboms")
+
+          # Check for existing version
+          EXISTING_COUNT=$(echo "$API_RESPONSE" | jq -r --arg version "$IMAGE_SHA" '[.items[]? | select(.sbom.version == $version)] | length' 2>/dev/null || echo "0")
 
           if [ "$EXISTING_COUNT" -gt 0 ]; then
             echo "✓ SBOM with version $IMAGE_SHA already exists ($EXISTING_COUNT found)"
