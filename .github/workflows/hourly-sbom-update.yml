@@ -6,7 +6,7 @@ on:
     # Run every hour
     - cron: '0 * * * *'
   # Allow manual triggering
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   update-sboms:
