@@ -112,7 +112,7 @@ jobs:
           COMPONENT_ID: ${{ matrix.image.component_id }}
           COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
-          AUGMENT: true
+          AUGMENT: false
           ENRICH: false
 
       - name: Upload CDX SBOM to sbomify
@@ -125,5 +125,5 @@ jobs:
           COMPONENT_ID: ${{ matrix.image.component_id }}
           COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
-          AUGMENT: true
+          AUGMENT: false
           ENRICH: false
