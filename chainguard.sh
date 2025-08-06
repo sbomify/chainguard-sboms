@@ -10,9 +10,13 @@ fi
 
 IMAGE="$1"
 
-# Pull the image
-echo "Pulling image cgr.dev/chainguard/$IMAGE..."
-docker pull "cgr.dev/chainguard/$IMAGE"
+# Check if image exists locally, pull if not
+if ! docker image inspect "cgr.dev/chainguard/$IMAGE:latest" >/dev/null 2>&1; then
+  echo "Pulling image cgr.dev/chainguard/$IMAGE..."
+  docker pull "cgr.dev/chainguard/$IMAGE"
+else
+  echo "Image cgr.dev/chainguard/$IMAGE already available locally"
+fi
 
 # Get SBOM
 echo "Downloading SBOM attestation..."
