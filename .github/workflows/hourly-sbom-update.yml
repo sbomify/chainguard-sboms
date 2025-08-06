@@ -115,15 +115,15 @@ jobs:
           AUGMENT: false
           ENRICH: false
 
-      - name: Upload CDX SBOM to sbomify
-        if: steps.check_sbom.outputs.skip_upload != 'true'
-        id: upload_cdx_sbom
-        uses: sbomify/github-action@master
-        env:
-          TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
-          COMPONENT_NAME: 'mariadb'
-          COMPONENT_ID: ${{ matrix.image.component_id }}
-          COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
-          SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
-          AUGMENT: false
-          ENRICH: false
+      #- name: Upload CDX SBOM to sbomify
+      #  if: steps.check_sbom.outputs.skip_upload != 'true'
+      #  id: upload_cdx_sbom
+      #  uses: sbomify/github-action@master
+      #  env:
+      #    TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
+      #    COMPONENT_NAME: 'mariadb'
+      #    COMPONENT_ID: ${{ matrix.image.component_id }}
+      #    COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
+      #    SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
+      #    AUGMENT: false
+      #    ENRICH: false
