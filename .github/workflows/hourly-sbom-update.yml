@@ -48,7 +48,7 @@ jobs:
           cd $HOME
           rm -rf /tmp/sbom-convert
 
-      - name: Get image SHA and check existing SBOM
+      - name: Generate SBOM and check for existing version
         id: check_sbom
         env:
           SBOMIFY_TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
@@ -62,12 +62,44 @@ jobs:
             "cgr.dev/chainguard/${{ matrix.image.name }}:latest" \
             | jq -r '.[].Id')
 
-          # Store the SHA as an output variable
+          # Generate the SBOM first to get the actual version
+          echo "Generating SBOM to extract version..."
+          ./chainguard.sh ${{ matrix.image.name }}
+
+          # Extract the version from the SBOM using documentDescribes reference
+          if [ -f "sbom.spdx.json" ]; then
+            # Get the main package reference from documentDescribes
+            MAIN_PACKAGE_REF=$(jq -r '.documentDescribes[0]' sbom.spdx.json 2>/dev/null || echo "")
+
+            if [ -n "$MAIN_PACKAGE_REF" ] && [ "$MAIN_PACKAGE_REF" != "null" ]; then
+              # Get the versionInfo from the referenced package
+              SBOM_VERSION=$(jq -r --arg ref "$MAIN_PACKAGE_REF" \
+                '.packages[] | select(.SPDXID == $ref) | .versionInfo' \
+                sbom.spdx.json 2>/dev/null || echo "unknown")
+
+              echo "SBOM version from main package ($MAIN_PACKAGE_REF): $SBOM_VERSION"
+            else
+              echo "Could not find documentDescribes reference, using image SHA as version"
+              SBOM_VERSION="$IMAGE_SHA"
+            fi
+
+            # If we couldn't find a version, fall back to image SHA
+            if [ "$SBOM_VERSION" = "unknown" ] || [ "$SBOM_VERSION" = "null" ] || [ -z "$SBOM_VERSION" ]; then
+              echo "Could not extract version from main package, using image SHA as version"
+              SBOM_VERSION="$IMAGE_SHA"
+            fi
+          else
+            echo "SBOM file not found, using image SHA as version"
+            SBOM_VERSION="$IMAGE_SHA"
+          fi
+
+          # Store both values as output variables
           echo "image_sha=$IMAGE_SHA" >> $GITHUB_OUTPUT
-          echo "Using image SHA: $IMAGE_SHA"
+          echo "sbom_version=$SBOM_VERSION" >> $GITHUB_OUTPUT
+          echo "Using SBOM version for duplicate checking: $SBOM_VERSION"
 
           # Check if SBOM with this version already exists
-          echo "Checking if SBOM with version $IMAGE_SHA already exists..."
+          echo "Checking if SBOM with version $SBOM_VERSION already exists..."
 
           # Make API call to check for existing SBOMs with better error handling
           echo "Making API call to component" \
@@ -108,22 +140,22 @@ jobs:
                 echo "No existing SBOMs found for this component"
               fi
 
-              # Check for existing version
+              # Check for existing version using SBOM version
               EXISTING_COUNT=$(echo "$RESPONSE_BODY" | \
-                jq -r --arg version "$IMAGE_SHA" \
+                jq -r --arg version "$SBOM_VERSION" \
                 '[.items[]? | select(.sbom.version == $version)] | length' \
                 2>/dev/null || echo "0")
 
-              echo "Checking for current image version: $IMAGE_SHA"
+              echo "Checking for SBOM version: $SBOM_VERSION"
               echo "Found $EXISTING_COUNT existing SBOMs with matching version"
 
               if [ "$EXISTING_COUNT" -gt 0 ]; then
-                echo "✓ SBOM with version $IMAGE_SHA" \
+                echo "✓ SBOM with version $SBOM_VERSION" \
                   "already exists ($EXISTING_COUNT found)"
                 echo "Skipping SBOM generation and upload..."
                 echo "skip_upload=true" >> $GITHUB_OUTPUT
               else
-                echo "✗ No existing SBOM found with version $IMAGE_SHA"
+                echo "✗ No existing SBOM found with version $SBOM_VERSION"
                 echo "Proceeding with SBOM generation..."
                 echo "skip_upload=false" >> $GITHUB_OUTPUT
               fi
@@ -140,12 +172,11 @@ jobs:
             echo "skip_upload=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Generate SBOM for ${{ matrix.image.name }}
+      - name: Process SBOM for ${{ matrix.image.name }}
         if: steps.check_sbom.outputs.skip_upload != 'true'
         id: update_sbom
         run: |
-          # Run the script to generate the SBOM (image is already pulled)
-          ./chainguard.sh ${{ matrix.image.name }}
+          # SBOM was already generated in the previous step, just process it
 
           mkdir -p sboms
           mv sbom.spdx.json sboms/${{ matrix.image.name }}-sbom.spdx.json
@@ -173,7 +204,7 @@ jobs:
           TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
           COMPONENT_NAME: ${{ matrix.image.name }}
           COMPONENT_ID: ${{ matrix.image.component_id }}
-          COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
+          COMPONENT_VERSION: ${{ steps.check_sbom.outputs.sbom_version }}
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
           AUGMENT: false
           ENRICH: false
