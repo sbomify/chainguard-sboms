@@ -7,5 +7,6 @@ sboms/
 
 # Ignore other common files
 .DS_Store
-*.logsbom.spdx.json
+*.log
+sbom.spdx.json
 sbom.cdx.json
