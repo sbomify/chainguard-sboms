@@ -91,14 +91,31 @@ jobs:
             if echo "$RESPONSE_BODY" | jq empty 2>/dev/null; then
               echo "Valid JSON response received"
 
+              # Log information about existing SBOMs
+              TOTAL_SBOMS=$(echo "$RESPONSE_BODY" | jq -r '.items | length' 2>/dev/null || echo "0")
+              echo "Found $TOTAL_SBOMS total existing SBOMs for component ${{ matrix.image.component_id }}"
+
+              if [ "$TOTAL_SBOMS" -gt 0 ]; then
+                echo "Latest release information:"
+                echo "$RESPONSE_BODY" | jq -r '.items[0] | "  Latest SBOM ID: \(.sbom.id)"' 2>/dev/null || echo "  Could not parse latest SBOM ID"
+                echo "$RESPONSE_BODY" | jq -r '.items[0] | "  Latest Version: \(.sbom.version)"' 2>/dev/null || echo "  Could not parse latest version"
+                echo "$RESPONSE_BODY" | jq -r '.items[0] | "  Created: \(.sbom.created_at)"' 2>/dev/null || echo "  Could not parse creation date"
+
+                # Show all existing versions for reference
+                echo "All existing versions:"
+                echo "$RESPONSE_BODY" | jq -r '.items[] | "  - \(.sbom.version) (created: \(.sbom.created_at))"' 2>/dev/null || echo "  Could not parse versions"
+              else
+                echo "No existing SBOMs found for this component"
+              fi
+
               # Check for existing version
               EXISTING_COUNT=$(echo "$RESPONSE_BODY" | \
                 jq -r --arg version "$IMAGE_SHA" \
                 '[.items[]? | select(.sbom.version == $version)] | length' \
                 2>/dev/null || echo "0")
 
-              echo "Found $EXISTING_COUNT existing SBOMs" \
-                "with version $IMAGE_SHA"
+              echo "Checking for current image version: $IMAGE_SHA"
+              echo "Found $EXISTING_COUNT existing SBOMs with matching version"
 
               if [ "$EXISTING_COUNT" -gt 0 ]; then
                 echo "✓ SBOM with version $IMAGE_SHA" \
