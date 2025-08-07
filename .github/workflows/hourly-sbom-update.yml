@@ -1,7 +1,7 @@
 ---
 name: Hourly SBOM Update
 
-on:
+'on':
   schedule:
     # Run every hour
     - cron: '0 * * * *'
@@ -56,8 +56,11 @@ jobs:
           # Pull the image first to get the SHA
           docker pull "cgr.dev/chainguard/${{ matrix.image.name }}:latest"
 
-          # Get the image SHA directly from docker inspect (keep sha256: prefix to match API format)
-          IMAGE_SHA=$(docker inspect "cgr.dev/chainguard/${{ matrix.image.name }}:latest" | jq -r '.[].Id')
+          # Get the image SHA directly from docker inspect
+          # (keep sha256: prefix to match API format)
+          IMAGE_SHA=$(docker inspect \
+            "cgr.dev/chainguard/${{ matrix.image.name }}:latest" \
+            | jq -r '.[].Id')
 
           # Store the SHA as an output variable
           echo "image_sha=$IMAGE_SHA" >> $GITHUB_OUTPUT
@@ -66,20 +69,58 @@ jobs:
           # Check if SBOM with this version already exists
           echo "Checking if SBOM with version $IMAGE_SHA already exists..."
 
-          # Make API call to check for existing SBOMs
-          API_RESPONSE=$(curl -s -H "Authorization: Bearer $SBOMIFY_TOKEN" \
-            "https://app.sbomify.com/api/v1/components/${{ matrix.image.component_id }}/sboms")
+          # Make API call to check for existing SBOMs with better error handling
+          echo "Making API call to component" \
+            "${{ matrix.image.component_id }}..."
+          API_RESPONSE=$(curl -s -w "HTTP_STATUS:%{http_code}" \
+            -H "Authorization: Bearer $SBOMIFY_TOKEN" \
+            "https://app.sbomify.com/api/v1/components/" \
+            "${{ matrix.image.component_id }}/sboms")
 
-          # Check for existing version
-          EXISTING_COUNT=$(echo "$API_RESPONSE" | jq -r --arg version "$IMAGE_SHA" '[.items[]? | select(.sbom.version == $version)] | length' 2>/dev/null || echo "0")
+          # Extract HTTP status and response body
+          HTTP_STATUS=$(echo "$API_RESPONSE" | \
+            grep -o "HTTP_STATUS:[0-9]*" | cut -d: -f2)
+          RESPONSE_BODY=$(echo "$API_RESPONSE" | \
+            sed 's/HTTP_STATUS:[0-9]*$//')
 
-          if [ "$EXISTING_COUNT" -gt 0 ]; then
-            echo "✓ SBOM with version $IMAGE_SHA already exists ($EXISTING_COUNT found)"
-            echo "Skipping SBOM generation and upload..."
-            echo "skip_upload=true" >> $GITHUB_OUTPUT
+          echo "API HTTP Status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "API call successful"
+
+            # Validate JSON response
+            if echo "$RESPONSE_BODY" | jq empty 2>/dev/null; then
+              echo "Valid JSON response received"
+
+              # Check for existing version
+              EXISTING_COUNT=$(echo "$RESPONSE_BODY" | \
+                jq -r --arg version "$IMAGE_SHA" \
+                '[.items[]? | select(.sbom.version == $version)] | length' \
+                2>/dev/null || echo "0")
+
+              echo "Found $EXISTING_COUNT existing SBOMs" \
+                "with version $IMAGE_SHA"
+
+              if [ "$EXISTING_COUNT" -gt 0 ]; then
+                echo "✓ SBOM with version $IMAGE_SHA" \
+                  "already exists ($EXISTING_COUNT found)"
+                echo "Skipping SBOM generation and upload..."
+                echo "skip_upload=true" >> $GITHUB_OUTPUT
+              else
+                echo "✗ No existing SBOM found with version $IMAGE_SHA"
+                echo "Proceeding with SBOM generation..."
+                echo "skip_upload=false" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "ERROR: Invalid JSON response from API"
+              echo "Response: $RESPONSE_BODY"
+              echo "Proceeding with upload as fallback..."
+              echo "skip_upload=false" >> $GITHUB_OUTPUT
+            fi
           else
-            echo "✗ No existing SBOM found with version $IMAGE_SHA"
-            echo "Proceeding with SBOM generation..."
+            echo "ERROR: API call failed with status $HTTP_STATUS"
+            echo "Response: $RESPONSE_BODY"
+            echo "Proceeding with upload as fallback..."
             echo "skip_upload=false" >> $GITHUB_OUTPUT
           fi
 
@@ -120,16 +161,3 @@ jobs:
           SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.spdx.json'
           AUGMENT: false
           ENRICH: false
-
-      #- name: Upload CDX SBOM to sbomify
-      #  if: steps.check_sbom.outputs.skip_upload != 'true'
-      #  id: upload_cdx_sbom
-      #  uses: sbomify/github-action@master
-      #  env:
-      #    TOKEN: ${{ secrets.SBOMIFY_TOKEN }}
-      #    COMPONENT_NAME: ${{ matrix.image.name }}
-      #    COMPONENT_ID: ${{ matrix.image.component_id }}
-      #    COMPONENT_VERSION: ${{ steps.check_sbom.outputs.image_sha }}
-      #    SBOM_FILE: 'sboms/${{ matrix.image.name }}-sbom.cdx.json'
-      #    AUGMENT: false
-      #    ENRICH: false
