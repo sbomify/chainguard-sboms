@@ -74,8 +74,7 @@ jobs:
             "${{ matrix.image.component_id }}..."
           API_RESPONSE=$(curl -s -w "HTTP_STATUS:%{http_code}" \
             -H "Authorization: Bearer $SBOMIFY_TOKEN" \
-            "https://app.sbomify.com/api/v1/components/" \
-            "${{ matrix.image.component_id }}/sboms")
+            "https://app.sbomify.com/api/v1/components/${{ matrix.image.component_id }}/sboms")
 
           # Extract HTTP status and response body
           HTTP_STATUS=$(echo "$API_RESPONSE" | \
